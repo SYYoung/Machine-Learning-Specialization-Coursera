@@ -1,0 +1,7 @@
+1. conda activate tensorflow
+2. python -m ipykernel install --user --name tensorflow --display-name "Python 3.9 (tensorflow)"
+
+
+3. then bring up jupyter notebook
+4. choose the tensor flow kernel
+5. test by running the first statement to make sure tensor flow is installed properly 
