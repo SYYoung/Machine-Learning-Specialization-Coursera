@@ -5,3 +5,7 @@
 3. then bring up jupyter notebook
 4. choose the tensor flow kernel
 5. test by running the first statement to make sure tensor flow is installed properly 
+
+
+if it complains ipympl not installed, do following:
+conda install -c conda-forge ipympl
