@@ -1,0 +1,20 @@
+Once in a while you might run into the following error:
+
+_XSERVTransmkdir: ERROR: euid != 0,directory /tmp/.X11-unix will not be created.
+_XSERVTransSocketUNIXCreateListener: mkdir(/tmp/.X11-unix) failed, errno = 2
+_XSERVTransMakeAllCOTSServerListeners: failed to create listener for local
+(EE) Fatal server error:
+(EE) Cannot establish any listening sockets - Make sure an X server isn't already running(EE)
+To solve it just a few commands are needed, it’s just a workaround but worked every time so far:
+
+mkdir /tmp/.X11-unix
+sudo chmod 1777/tmp/.X11-unix
+sudo chown root /tmp/.X11-unix/
+It can also happen that Xvfb crashed but still blocking the display port. It is then not possible to restart Xvfb on the same display port:
+Fatal server error:
+Server is already active for display 1337
+    If this server is no longer running, remove /tmp/.X1337-lock
+    and start again.
+As suggested from the message the lock file needs to be removed:
+rm /tmp/.X1337-lock
+Afterwards it is possible to start Xvfb again on display port 1337.
